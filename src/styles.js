@@ -15,14 +15,7 @@ const useClasses = (stylesElement, customprops) => {
     return prepared;
   }, [stylesElement, theme, customprops]);
 };
-const slidein = css`
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-`;
+
 const styles = (theme, customprops) => ({
   profile: {
     borderRadius: "50%",
@@ -36,11 +29,17 @@ const styles = (theme, customprops) => ({
     backgroundColor: "#9BA4B5",
   },
 
-  text: {
-    animation: `${slidein} 3s infinite alternate`,
-  },
+ 
   anchorLink: {
     textDecoration: "none",
+    color: "black", // Default color
+    "&:hover": {
+      color: "white",
+    
+    },
+    "&:active": {
+      color: "white", 
+    },
   },
 });
 export const useStyles = (customprops) => useClasses(styles, customprops);

@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect } from "react";
-import { Tabs, Tab, Grid, Typography, Box, Slide } from "@mui/material";
+import React from "react";
+import { Grid, Typography, Box, Slide } from "@mui/material";
 import { motion } from "framer-motion";
 import { useStyles } from "./styles";
 
@@ -22,7 +22,7 @@ const APP = () => {
   const classes = useStyles();
 
   return (
-    <div>
+    <Grid >
       <Grid
         container
         alignItems="center"
@@ -88,35 +88,47 @@ const APP = () => {
           />
         </Grid>
       </Grid>
-      <Grid id="about" container alignItems={"center"} justifyContent={"space-between"}>
-      <Grid item>
-          <Typography variant="h4" color="white">
-            About Me
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Slide direction="up" in={true} mountOnEnter unmountOnExit>
-            <Box
-              border={1}
-              borderRadius={8}
-              borderColor="#91C8E4"
-              p={2}
-              style={{ width: "100%", boxSizing: "border-box" }}
-            >
-              <Typography>
-                👋 Hi there! I'm Palak, a passionate and creative Front-End Developer with a keen eye for design and a
+      <Grid ml={4} mr={4}>
+      <Grid id="about" container alignItems="center" justifyContent="space-between">
+      <Grid item xs={12} sm={6}>
+        <Typography  fontFamily= 'Raleway' variant="h4" color="white">
+          About Me
+        </Typography>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <Slide direction="up" in={true} mountOnEnter unmountOnExit>
+          <Box
+            border={1}
+            borderRadius={8}
+            borderColor="#91C8E4"
+            p={2}
+            style={{ width: "100%", boxSizing: "border-box" }}
+          >
+            <Typography color="white">
+            👋 Hi there! I'm Palak, a passionate and creative Front-End Developer with a keen eye for design and a
                 love for crafting seamless user experiences. 🌐 My expertise lies in HTML, CSS, and JavaScript, and I'm
                 well-versed in modern front-end frameworks like React. 🚀 In addition to technical skills, I'm a strong
                 communicator and a collaborative team player. I believe in the power of teamwork and open communication
                 to deliver exceptional results. 🌟 If you're looking for a front-end developer who is not only skilled
                 but also passionate about their work, I'd love to connect and explore how I can contribute to your
                 team's success. Let's build something awesome together!
-              </Typography>
-            </Box>
-          </Slide>
-        </Grid>
+            </Typography>
+          </Box>
+        </Slide>
       </Grid>
-    </div>
+    </Grid>
+    <Grid id="education" container alignItems="center" justifyContent="space-between" mt={4}>
+      <Grid item xs={12} sm={6}>
+        <Typography fontFamily="Raleway" variant="h4" color="white">
+          Education
+        </Typography>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+          
+      </Grid>
+    </Grid>
+</Grid>
+    </Grid>
   );
 };
 
