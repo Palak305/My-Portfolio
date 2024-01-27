@@ -29,17 +29,45 @@ const styles = (theme, customprops) => ({
     backgroundColor: "#9BA4B5",
   },
 
- 
+
   anchorLink: {
     textDecoration: "none",
     color: "black", // Default color
     "&:hover": {
       color: "white",
-    
+
     },
     "&:active": {
-      color: "white", 
+      color: "white",
     },
   },
+  aboutContainer:{
+
+        // background:
+        //   "linear-gradient(45deg, #5f72be, #9b23ea)", // Add gradient background
+        // padding: "20px", // Adjust padding as needed
+        // borderRadius: "8px", // Add border radius
+
+  },
+  aboutBox: {
+    border: `1px solid black`,
+    borderRadius: "8px",
+    padding: "20px",
+    width: "100%",
+    boxSizing: "border-box",
+    backgroundColor: "#394249",
+    color: "#ffffff",
+    transition: "transform 0.3s ease-in-out",
+    '&:hover': {
+      transform: 'scale(1.05)',
+    },
+    background: `linear-gradient(45deg, #485563, #29323c)`,
+
+  },
+  highlightText: {
+    color: "#FFE000", // Highlight color
+    fontWeight: "bold",
+  },
+
 });
 export const useStyles = (customprops) => useClasses(styles, customprops);

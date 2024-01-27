@@ -2,7 +2,12 @@ import React from "react";
 import { Grid, Typography, Box, Slide } from "@mui/material";
 import { motion } from "framer-motion";
 import { useStyles } from "./styles";
-
+import EducationDetails from "./components/education";
+import Skill from "./components/skill";
+import AboutMe from "./components/aboutMe";
+import Experience from "./components/experience";
+import Project from "./components/project";
+import Contact from "./components/contact";
 const variantImg = {
   hidden: {
     opacity: 0,
@@ -22,14 +27,17 @@ const APP = () => {
   const classes = useStyles();
 
   return (
-    <Grid >
+    <Grid>
       <Grid
         container
         alignItems="center"
         justifyContent="space-around"
         spacing={2}
         px={1}
-        sx={{ height: "60px", background: "#A8A196" }}
+        sx={{
+          height: "60px",
+          background: "linear-gradient(90deg, #1c92d2,#f2fcfe)",
+        }}
       >
         <Grid item>
           <a className={classes.anchorLink} href="#about">
@@ -48,19 +56,19 @@ const APP = () => {
             {" "}
             Skills
           </a>
-        </Grid>  
+        </Grid>
         <Grid item>
-          <a className={classes.anchorLink} href="#experirence">
+          <a className={classes.anchorLink} href="#experience">
             {" "}
             Experience
           </a>
-        </Grid>  
+        </Grid>
         <Grid item>
-          <a className={classes.anchorLink} href="#projects">
+          <a className={classes.anchorLink} href="#project">
             {" "}
             Projects
           </a>
-        </Grid>  
+        </Grid>
         <Grid item>
           <a className={classes.anchorLink} href="#contact">
             {" "}
@@ -68,13 +76,27 @@ const APP = () => {
           </a>
         </Grid>
       </Grid>
-      <Grid container alignItems={"center"} justifyContent={"center"} sx={{ height: "calc(100vh - 40px)" }}>
-        <Grid component={motion.div} variants={variantImg} initial="hidden" animate="visible" item xs={12} sm={4}>
+      <Grid
+        container
+        alignItems={"center"}
+        justifyContent={"center"}
+        sx={{ height: "calc(100vh - 40px)" }}
+
+      >
+        <Grid
+          component={motion.div}
+          variants={variantImg}
+          initial="hidden"
+          animate="visible"
+          item
+          xs={12}
+          sm={4}
+        >
           <Typography variant="h4" color="white">
             Hi, I am Palak Periwal.
           </Typography>
           <Typography variant="h6" color="white">
-            A Frontend ReactJS Developer👩‍💻
+            A Frontend Developer👩‍💻
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -88,46 +110,27 @@ const APP = () => {
           />
         </Grid>
       </Grid>
-      <Grid ml={4} mr={4}>
-      <Grid id="about" container alignItems="center" justifyContent="space-between">
-      <Grid item xs={12} sm={6}>
-        <Typography  fontFamily= 'Raleway' variant="h4" color="white">
-          About Me
-        </Typography>
+      <Grid container direction="column"
+        spacing={4} p={1} >
+        <Grid id="about" item>
+          <AboutMe />
+        </Grid>
+        <Grid id="education" item>
+          <EducationDetails />
+        </Grid>
+        <Grid id="skills" item >
+          <Skill />
+        </Grid>
+        <Grid id="experience" item >
+          <Experience />
+        </Grid>
+        <Grid id="project" item >
+          <Project />
+        </Grid>
+        <Grid id="contact" item >
+          <Contact />
+        </Grid>
       </Grid>
-      <Grid item xs={12} sm={6}>
-        <Slide direction="up" in={true} mountOnEnter unmountOnExit>
-          <Box
-            border={1}
-            borderRadius={8}
-            borderColor="#91C8E4"
-            p={2}
-            style={{ width: "100%", boxSizing: "border-box" }}
-          >
-            <Typography color="white">
-            👋 Hi there! I'm Palak, a passionate and creative Front-End Developer with a keen eye for design and a
-                love for crafting seamless user experiences. 🌐 My expertise lies in HTML, CSS, and JavaScript, and I'm
-                well-versed in modern front-end frameworks like React. 🚀 In addition to technical skills, I'm a strong
-                communicator and a collaborative team player. I believe in the power of teamwork and open communication
-                to deliver exceptional results. 🌟 If you're looking for a front-end developer who is not only skilled
-                but also passionate about their work, I'd love to connect and explore how I can contribute to your
-                team's success. Let's build something awesome together!
-            </Typography>
-          </Box>
-        </Slide>
-      </Grid>
-    </Grid>
-    <Grid id="education" container alignItems="center" justifyContent="space-between" mt={4}>
-      <Grid item xs={12} sm={6}>
-        <Typography fontFamily="Raleway" variant="h4" color="white">
-          Education
-        </Typography>
-      </Grid>
-      <Grid item xs={12} sm={6}>
-          
-      </Grid>
-    </Grid>
-</Grid>
     </Grid>
   );
 };
